@@ -4,13 +4,13 @@ A python package implementing the strategy of business transaction in flask micr
 
 ##Simple Example
 initialize:
-```
+```python
 from flask_dry_transaction import Transaction, Right, Left
 
 transaction = Transaction()
 ```
 register with functions:
-```
+```python
 @transaction.register
 def is_positive(a):
     if a > 0:
@@ -26,20 +26,20 @@ def is_ten(a):
         return Left("Error, is not ten.")
 ```
 add steps:
-```
+```python
 transaction.new()
 transaction.step(is_positive)
 transaction.step(is_ten)
 ```
 execute the transaction:
-```
+```python
 transaction.call(-1)
 transaction.call(1)
 transaction.call(10)
 ```
 ##Working with class:
 create a service object:
-```
+```python
 class ServiceObject(object):
     transaction = Transaction()
     
@@ -68,7 +68,7 @@ class ServiceObject(object):
         return self.transaction.call(params)
 ```
 execute the transaction:
-```
+```python
 ServiceObject.call(-1)
 ServiceObject.call(1)
 ServiceObject.call(10)
