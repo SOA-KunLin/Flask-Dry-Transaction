@@ -2,6 +2,10 @@
 
 A python package implementing the strategy of business transaction in flask microservices developement
 
+##Installation
+```
+$ pip install flask_dry_transaction
+```
 ##Simple Example
 initialize:
 ```python

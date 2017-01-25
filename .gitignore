@@ -8,3 +8,4 @@
 /*.egg-info
 
 venv/
+ipython_notebook/
